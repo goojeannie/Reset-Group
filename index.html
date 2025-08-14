@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset TOI - Revolutionary Smart Hospitality Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo::before {
+            content: "🏠";
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #90EE90;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a3a1f 0%, #2c5530 50%, #4a7c59 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .patent-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #90EE90);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c5530;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            color: #666;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #2c5530;
+        }
+
+        /* Problem/Solution Section */
+        .problem-solution {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+            color: white;
+        }
+
+        .problem-solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .problem-solution h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .pain-points {
+            list-style: none;
+        }
+
+        .pain-points li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .pain-points li::before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+
+        .solutions li::before {
+            content: "✅";
+        }
+
+        /* Target Market Section */
+        .target-market {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .market-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .market-card {
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #f0f0f0;
+        }
+
+        .market-card:hover {
+            border-color: #4CAF50;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
+        }
+
+        .market-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .tech-demo {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+
+        .demo-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .demo-step {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .step-number {
+            background: #4CAF50;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+
+        /* Partnership Section */
+        .partnership {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a3a1f 0%, #2c5530 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .partnership-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 80px 0;
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a3a1f;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .problem-solution-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Reset T.O.I.</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#partnership">Partnership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="patent-badge">🛡️ Patent-Protected Technology | Korea Granted • US Pending</div>
+                <h1>The Future of Smart Hospitality</h1>
+                <p>Revolutionary T.O.I. (Total Operations Infrastructure) platform that automatically configures guest environments based on reservation data and preferences</p>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 10px; margin: 20px auto; max-width: 600px; backdrop-filter: blur(10px);">
+                    <strong>T.O.I. = Total Operations Infrastructure</strong><br>
+                    Comprehensive IoT platform for building automation, smart hospitality, and intelligent residential management
+                </div>
+                <div class="cta-buttons">
+                    <a href="#partnership" class="btn btn-primary">Partner with Reset</a>
+                    <a href="#technology" class="btn btn-secondary">See T.O.I. Technology</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Reset T.O.I. Platform</h2>
+            <p class="section-subtitle">Transform your properties into intelligent, guest-centric experiences with our Total Operations Infrastructure</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🏗️</span>
+                    <h3>Total Operations Infrastructure</h3>
+                    <p>Comprehensive building automation platform that integrates all IoT devices, energy systems, and guest services into one unified solution</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Reservation-Triggered Automation</h3>
+                    <p>Automatically configure lighting, temperature, and amenities based on guest check-in time and preferences</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>Smart Identity Verification</h3>
+                    <p>Secure activation only when the actual guest arrives - saving energy and preventing unauthorized access</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🌐</span>
+                    <h3>Cross-Property Intelligence</h3>
+                    <p>Guest preferences automatically transfer between your properties, creating seamless brand experiences</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Predictive Energy Management</h3>
+                    <p>AI-powered consumption forecasting reduces utility costs by up to 30% while maintaining guest comfort</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">📱</span>
+                    <h3>Complete T.O.I. Ecosystem</h3>
+                    <p>Full Total Operations Infrastructure including hardware, software, and cloud management - we handle everything from sensors to building automation</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>Revenue Optimization</h3>
+                    <p>Real-time analytics help maximize occupancy, reduce operational costs, and improve guest satisfaction scores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem-solution">
+        <div class="container">
+            <div class="problem-solution-grid">
+                <div>
+                    <h2>The $87B Problem</h2>
+                    <ul class="pain-points">
+                        <li>Properties sit empty between bookings, wasting energy</li>
+                        <li>Manual setup for each guest arrival creates inconsistency</li>
+                        <li>No way to transfer guest preferences between properties</li>
+                        <li>Energy costs eat into rental profits (15-25% of revenue)</li>
+                        <li>Guests expect hotel-level automation in vacation rentals</li>
+                        <li>Property managers can't monitor multiple locations efficiently</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h2>Reset's Solution</h2>
+                    <ul class="pain-points solutions">
+                        <li>Automatic energy management saves 30% on utility costs</li>
+                        <li>Consistent, perfect guest experience every time</li>
+                        <li>Brand loyalty through personalized multi-property stays</li>
+                        <li>Predictive analytics optimize occupancy and pricing</li>
+                        <li>Premium smart features justify higher nightly rates</li>
+                        <li>Centralized dashboard manages unlimited properties</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="target-market" class="target-market">
+        <div class="container">
+            <h2 class="section-title">Perfect for Your Business Model</h2>
+            
+            <div class="market-cards">
+                <div class="market-card">
+                    <span class="market-icon">🏖️</span>
+                    <h3>Vacation Rental Operators</h3>
+                    <p>Multiple properties across different locations need consistent, automated guest experiences</p>
+                    <strong>ROI: 25-40% cost reduction + 15% rate premium</strong>
+                </div>
+                
+                <div class="market-card">
+                    <span class="market-icon">🏨</span>
+                    <h3>Boutique Hotel Chains</h3>
+                    <p>Deliver luxury automation without major infrastructure investment</p>
+                    <strong>ROI: Enhanced guest scores + operational efficiency</strong>
+                </div>
+                
+                <div class="market-card">
+                    <span class="market-icon">🏢</span>
+                    <h3>Corporate Housing</h3>
+                    <p>Extended stay properties with rotating business travelers</p>
+                    <strong>ROI: Predictable costs + executive-level amenities</strong>
+                </div>
+                
+                <div class="market-card">
+                    <span class="market-icon">🏠</span>
+                    <h3>Property Management Companies</h3>
+                    <p>Scale smart features across entire portfolio</p>
+                    <strong>ROI: Centralized control + premium service offerings</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology" class="technology">
+        <div class="container">
+            <h2 class="section-title">Reset T.O.I. Technical Framework</h2>
+            <p class="section-subtitle">Patent-Protected Total Operations Infrastructure - Transforming Short-Term Rentals, Senior Housing & Student Communities</p>
+            
+            <!-- Development Status Badge -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div style="background: #ff6b35; color: white; padding: 10px 20px; border-radius: 25px; display: inline-block; margin-bottom: 20px; font-weight: bold;">
+                    🚧 DEVELOPMENT PHASE
+                </div>
+                <div style="background: rgba(76, 175, 80, 0.1); padding: 15px 25px; border-radius: 10px; border: 2px solid #4CAF50; margin: 0 auto; max-width: 800px;">
+                    <strong>Current Phase:</strong> We are actively developing Reset T.O.I. (Total Operations Infrastructure) specifications with our COMMAX Korea manufacturing partner. Our comprehensive building automation platform addresses three key verticals: Short-Term Rentals, Senior Housing, and Student Communities. Final specifications will be confirmed during Q1 2026.
+                </div>
+            </div>
+
+            <!-- Three Key Verticals -->
+            <div style="margin-bottom: 60px;">
+                <h3 style="text-align: center; margin-bottom: 40px; color: #2c5530; font-size: 2rem;">Three Key Verticals for Reset T.O.I.</h3>
+                <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: #666;">Our patent-protected Total Operations Infrastructure addresses unique building automation challenges across three major residential sectors:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border: 2px solid #e0e0e0;">
+                        <h4 style="color: #2c5530; font-size: 1.3rem; margin-bottom: 15px;">🏖️ Short-Term Rentals</h4>
+                        <p style="color: #666; margin-bottom: 20px; font-size: 0.9rem;">Vacation rentals, corporate housing, boutique hotels</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Guest arrival automation based on check-in times
+                            </li>
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Cross-property preference learning for repeat guests
+                            </li>
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Energy optimization during vacancy periods
+                            </li>
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Premium rate justification through smart amenities
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border: 2px solid #e0e0e0;">
+                        <h4 style="color: #2c5530; font-size: 1.3rem; margin-bottom: 15px;">🏡 Senior Housing</h4>
+                        <p style="color: #666; margin-bottom: 20px; font-size: 0.9rem;">Assisted living, independent living, senior communities</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Health monitoring and emergency detection
+                            </li>
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Family communication and remote monitoring
+                            </li>
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Fall detection and immediate response
+                            </li>
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Simplified interfaces for accessibility
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border: 2px solid #e0e0e0;">
+                        <h4 style="color: #2c5530; font-size: 1.3rem; margin-bottom: 15px;">🎓 Student Housing</h4>
+                        <p style="color: #666; margin-bottom: 20px; font-size: 0.9rem;">Dormitories, student apartments, campus housing</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Semester-based automatic room configuration
+                            </li>
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Energy management for cost control
+                            </li>
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Security monitoring and access control
+                            </li>
+                            <li style="padding: 5px 0; position: relative; padding-left: 25px;">
+                                <span style="position: absolute; left: 0; color: #4CAF50; font-weight: bold;">✓</span>
+                                Shared space management and scheduling
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How Reset TOI Works -->
+            <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); margin-bottom: 40px;">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #2c5530; font-size: 1.8rem;">How Reset T.O.I. Works</h3>
+                <p style="text-align: center; margin-bottom: 40px; color: #666;">Patent-protected Total Operations Infrastructure that's simple to deploy and impossible to replicate</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                    <div style="text-align: center; padding: 20px; border-radius: 10px; background: #f8f9fa;">
+                        <div style="background: #4CAF50; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem;">1</div>
+                        <h4 style="margin-bottom: 10px; color: #2c5530;">Resident/Guest Books</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Reservation data automatically flows to Reset T.O.I. platform</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px; border-radius: 10px; background: #f8f9fa;">
+                        <div style="background: #4CAF50; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem;">2</div>
+                        <h4 style="margin-bottom: 10px; color: #2c5530;">T.O.I. AI Prepares</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Total Operations Infrastructure predicts optimal settings based on profile and arrival time</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px; border-radius: 10px; background: #f8f9fa;">
+                        <div style="background: #4CAF50; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem;">3</div>
+                        <h4 style="margin-bottom: 10px; color: #2c5530;">User Arrives</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Smartphone verification activates personalized environment instantly</p>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px; border-radius: 10px; background: #f8f9fa;">
+                        <div style="background: #4CAF50; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem;">4</div>
+                        <h4 style="margin-bottom: 10px; color: #2c5530;">System Learns</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Preferences sync across all properties for future use</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMMAX Partnership -->
+            <div style="background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%); padding: 40px; border-radius: 15px; margin-bottom: 40px;">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #2c5530;">🤝 COMMAX Korea Partnership</h3>
+                <p style="text-align: center; margin-bottom: 30px; color: #666;">We are working directly with COMMAX Korea to select optimal hardware components for residential applications. COMMAX provides comprehensive IoT solutions including:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h4 style="color: #2c5530; margin-bottom: 10px;">🏠 Home IoT Platform</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Wall pads, gateways, mobile apps</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h4 style="color: #2c5530; margin-bottom: 10px;">💡 Lighting Control</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Smart switches, dimmers, wireless controls</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h4 style="color: #2c5530; margin-bottom: 10px;">🔐 Access Control</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Digital locks, door cameras, intercoms</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h4 style="color: #2c5530; margin-bottom: 10px;">🌡️ Climate Systems</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Thermostats, HVAC integration, sensors</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h4 style="color: #2c5530; margin-bottom: 10px;">📹 Security Solutions</h4>
+                        <p style="color: #666; font-size: 0.9rem;">CCTV, monitoring, alert systems</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h4 style="color: #2c5530; margin-bottom: 10px;">📱 Mobile Integration</h4>
+                        <p style="color: #666; font-size: 0.9rem;">Apps, remote control, cloud services</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Timeline -->
+            <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center;">
+                <h3 style="margin-bottom: 30px; color: #2c5530;">Development Timeline</h3>
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin: 0 auto; max-width: 600px;">
+                    <div style="font-size: 0.9rem; color: #666; line-height: 1.8;">
+                        <strong style="color: #2c5530;">Q1 2026:</strong> Hardware finalization with COMMAX<br>
+                        <strong style="color: #2c5530;">Q2 2026:</strong> Prototype testing with select partners<br>
+                        <strong style="color: #2c5530;">Q3 2026:</strong> Limited commercial deployment<br>
+                        <strong style="color: #2c5530;">Q4 2026:</strong> Full market launch
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <h4 style="margin-bottom: 15px; color: #2c5530;">Complete T.O.I. Solution</h4>
+                    <p style="margin: 20px 0; color: #666;">Reset provides everything: IoT hardware, Total Operations Infrastructure software, installation, and ongoing support through our Korean manufacturing partnership</p>
+                    <a href="#partnership" class="btn btn-primary">Join Early Partner Program</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partnership" class="partnership">
+        <div class="container">
+            <h2 class="section-title">Partner with Reset: T.O.I. First-Mover Advantage</h2>
+            <p class="section-subtitle">Join our exclusive early partner program and shape the future of Total Operations Infrastructure</p>
+            
+            <div class="partnership-benefits">
+                <div class="benefit-item">
+                    <h4>🚀 Early Adopter Pricing</h4>
+                    <p>Exclusive discounts for first 50 partners + revenue sharing opportunities</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4>🛠️ Full T.O.I. Implementation</h4>
+                    <p>Complete Total Operations Infrastructure deployment, software setup, and staff training included</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4>📈 Competitive Moat</h4>
+                    <p>Patent-protected Total Operations Infrastructure gives you 20-year exclusive advantage in your market</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4>🌍 Global Scalability</h4>
+                    <p>Korean manufacturing partnership ensures hardware supply for rapid expansion</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3>Currently Accepting T.O.I. Partnership Applications</h3>
+                <p style="margin: 20px 0; font-size: 1.1rem;">Total Operations Infrastructure prototype deployment starting Q2 2026 • Full commercial launch Q4 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Properties with T.O.I.?</h2>
+                <p style="font-size: 1.2rem; margin: 30px 0;">Join the select group of industry leaders building the future with Total Operations Infrastructure</p>
+                
+                <div class="cta-buttons">
+                    <a href="mailto:adventure@resetwithus.com?subject=Partnership Inquiry - Reset TOI" class="btn btn-secondary">Schedule Partnership Call</a>
+                    <a href="mailto:adventure@resetwithus.com?subject=Demo Request - Reset TOI" class="btn btn-primary">Request Private Demo</a>
+                </div>
+                
+                <p style="margin-top: 30px; opacity: 0.9;">
+                    <strong>Limited partnerships available:</strong> We're accepting applications from 25 early partners across vacation rentals, hotels, and corporate housing
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="logo" style="justify-content: center; margin-bottom: 20px;">Reset TOI</div>
+            <p><strong>Contact:</strong> adventure@resetwithus.com</p>
+            <p><strong>Address:</strong> PO Box 2332 Fairfax VA 22031</p>
+            <p style="margin-top: 20px; opacity: 0.8;">
+                Patent-Protected Innovation • Korean Manufacturing Partnership • Global Deployment Ready
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.feature-card, .market-card, .demo-step, .benefit-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
